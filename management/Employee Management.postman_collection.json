@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/employees/",
+					"raw": "http://127.0.0.1:8000/employees/?Authorization=Token 3fb3cc9723e0d639791212c7d79fce00db69621d",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -24,6 +24,12 @@
 					"path": [
 						"employees",
 						""
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Token 3fb3cc9723e0d639791212c7d79fce00db69621d"
+						}
 					]
 				}
 			},
@@ -123,7 +129,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/employees/9/",
+					"raw": "http://127.0.0.1:8000/employees/9/?Authorization=Token 3fb3cc9723e0d639791212c7d79fce00db69621d",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -136,6 +142,12 @@
 						"employees",
 						"9",
 						""
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Token 3fb3cc9723e0d639791212c7d79fce00db69621d"
+						}
 					]
 				}
 			},
