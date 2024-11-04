@@ -65,7 +65,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"name\": \"John Doe\",\r\n        \"position\": \"Software Engineer\",\r\n        \"department\": \"Development\",\r\n        \"email\": \"john1.ddoe@example.com\",\r\n        \"hire_date\": \"2024-11-02\"\r\n    }",
+					"raw": "    {\r\n        \"name\": \"John Doe\",\r\n        \"position\": \"Software Engineer\",\r\n        \"department\": \"Engineering\",\r\n        \"role\" : \"Devdsdeloper\",\r\n        \"email\": \"john1.ddoe9d1@example.com\",\r\n        \"date_joined\": \"2024-11-02\",\r\n        \"password\":\"megha@123\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
