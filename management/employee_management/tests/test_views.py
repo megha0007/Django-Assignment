@@ -11,7 +11,7 @@ class TestEmployeeView:
         self.factory = APIRequestFactory()
 
     def test_get_employee(self):
-        employee = Employee.objects.create(name="John Doe", position="Developer", email="john@example.com", hire_date="2023-01-01")
+        employee = Employee.objects.create(name="John Doe", position="Developer", email="john@example.com", date_joined="2023-01-01")
         view = EmployeeView.as_view()
         request = self.factory.get(f'/employees/{employee.id}/')
         response = view(request, id=employee.id)
@@ -24,7 +24,7 @@ class TestEmployeeView:
             "name": "Jane Doe",
             "position": "Manager",
             "email": "jane@example.com",
-            "hire_date": "2023-01-01"
+            "date_joined": "2023-01-01"
         }
         request = self.factory.post('/employees/', data)
         response = view(request)
@@ -32,7 +32,7 @@ class TestEmployeeView:
         assert Employee.objects.filter(name="Jane Doe").exists()
 
     def test_put_employee(self):
-        employee = Employee.objects.create(name="John Doe", position="Developer", email="john@example.com", hire_date="2023-01-01")
+        employee = Employee.objects.create(name="John Doe", position="Developer", email="john@example.com", date_joined="2023-01-01")
         view = EmployeeView.as_view()
         updated_data = {
             "name": "John Smith",
@@ -45,7 +45,7 @@ class TestEmployeeView:
         assert employee.name == "John Smith"
 
     def test_delete_employee(self):
-        employee = Employee.objects.create(name="John Doe", position="Developer", email="john@example.com", hire_date="2023-01-01")
+        employee = Employee.objects.create(name="John Doe", position="Developer", email="john@example.com", date_joined="2023-01-01")
         view = EmployeeView.as_view()
         request = self.factory.delete(f'/employees/{employee.id}/')
         response = view(request, id=employee.id)

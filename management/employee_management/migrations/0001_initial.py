@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('position', models.CharField(max_length=100)),
                 ('department', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=254, unique=True)),
-                ('hire_date', models.DateField()),
+                ('date_joined', models.DateField()),
             ],
         ),
     ]
