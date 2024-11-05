@@ -117,6 +117,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',  # For Token Authentication
         # 'rest_framework_simplejwt.authentication.JWTAuthentication',  # Uncomment for SimpleJWT
         'rest_framework.authentication.SessionAuthentication',
+        
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
     ),
 }
 
