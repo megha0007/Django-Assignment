@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-
+from rest_framework.exceptions import ValidationError
 class EmployeeView(APIView):
     
     def get(self, request, id=None):
@@ -33,6 +33,9 @@ class EmployeeView(APIView):
     def post(self, request):
         """Create a new employee and generate an authentication token."""
         # Create a serializer instance with the incoming data
+        
+        if 'password' not in request.data or not request.data['password']:
+            raise ValidationError({"password": "Password is required."})
         serializer = EmployeeSerializer(data=request.data)
         
         if serializer.is_valid():
